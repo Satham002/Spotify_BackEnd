@@ -4,6 +4,7 @@ import 'dotenv/config'
 import SongRouter from './src/routes/SongRouter.js';
 import connectDB from './src/config/db.js';
 import Connect_cloudinary from './src/config/Cloundinary.js';
+import albamRouter from './src/routes/AlbamRouter.js';
 
 
 //app config
@@ -19,6 +20,7 @@ app.use(cors());
 
 //middleware config
 app.use("/api/song", SongRouter)
+app.use("api/Albam/", albamRouter)
 
 
 //init routes

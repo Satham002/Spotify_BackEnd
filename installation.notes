@@ -1,0 +1,7 @@
+npm init
+npm install cloudinary cors dotenv express mongoose multer nodemon
+            
+            #cloudinary for Storing data on cloud
+            #cors for ui and db between comunication
+
+npm run server

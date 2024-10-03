@@ -5,6 +5,6 @@ const albamRouter = express.Router();
 
 albamRouter.post("/add", upload.single("image"), addAlbam);
 albamRouter.get("/list", listAlbam);
-albamRouter.post("remove", deleteAlbam)
+albamRouter.post("/remove", deleteAlbam)
 
 export default albamRouter;

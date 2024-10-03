@@ -20,7 +20,7 @@ app.use(cors());
 
 //middleware config
 app.use("/api/song", SongRouter)
-app.use("api/Albam/", albamRouter)
+app.use("/api/Albam", albamRouter)
 
 
 //init routes

@@ -4,11 +4,10 @@ import albamModel from '../models/AlbamModel.js'
 const addAlbam = async (req, res) => {
     try {
         const name = req.body.name;
-        const desc = req.body.description;
+        const desc = req.body.desc;
         const bgColor = req.body.bgColor
         const imageFile = req.file;
         const imageUpload = await cloudinary.uploader.upload(imageFile.path, { resource_type: "image" })
-        // console.log(imageUpload)
         const albamData = {
             name,
             desc,
@@ -17,9 +16,9 @@ const addAlbam = async (req, res) => {
         }
         const albam = albamModel(albamData)
         await albam.save()
-        res.status(200).json({ result: true, message: "Albam Added" })
+        res.status(200).json({ result: true, message: "Album Added" })
     } catch (error) {
-        res.status(404).json({ result: true, message: "error" })
+        res.status(404).json({ result: true, message: "error occured" })
     }
 }
 
@@ -39,7 +38,7 @@ const deleteAlbam = async (req, res) => {
         await albamModel.findByIdAndDelete({ _id: id })
         res.status(200).json({ result: true, message: "Delete Sucessfully" })
     } catch (error) {
-        res.status(404).json({ result: false, message: "error" })
+        res.status(404).json({ result: false, message: "Error occured" })
     }
 
 }

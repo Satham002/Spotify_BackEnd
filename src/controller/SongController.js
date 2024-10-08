@@ -10,7 +10,7 @@ const addSong = async (req, res) => {
         const audioUpload = await cloudinary.uploader.upload(audioFile.path, { resource_type: "video" });
         const imageUpload = await cloudinary.uploader.upload(imageFile.path, { resource_type: "image" });
         const duration = `${Math.floor(audioUpload.duration / 60)}:${Math.floor(audioUpload.duration % 60)}`;
-        console.log(name, desc, albam, imageFile, audioFile)
+        // console.log(name, desc, albam, imageFile, audioFile)
 
         const songdata = {
             name,
@@ -43,7 +43,7 @@ const removeSong = async (req, res) => {
         await songModel.findByIdAndDelete(req.body.id)
         res.status(200).json({ result: true, message: "Song Deleted" })
     } catch (error) {
-        res.status(404).json({ result: false, message: "error" })
+        res.status(404).json({ result: false, message: "error occured" })
     }
 }
 

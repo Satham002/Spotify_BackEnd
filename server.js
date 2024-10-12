@@ -10,6 +10,7 @@ import albamRouter from './src/routes/AlbamRouter.js';
 //app config
 const app = express();
 const port = process.env.PORT || 4000;
+// const functions = require("firebase-functions")
 app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded bodies (for form submissions)
 connectDB(); //mongo Connection
 Connect_cloudinary() //cloud-storage Connection
@@ -26,4 +27,8 @@ app.use("/api/Albam", albamRouter)
 //init routes
 app.get('/', (req, res) => res.send("API WORKING"));
 // app.listen(port)
+
+
 app.listen(port, () => console.log(`server started on ${port}`))
+
+// exports.api = functions.https.onRequest(app)

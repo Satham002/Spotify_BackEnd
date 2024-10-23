@@ -5,6 +5,7 @@ import SongRouter from './src/routes/SongRouter.js';
 import connectDB from './src/config/db.js';
 import Connect_cloudinary from './src/config/Cloundinary.js';
 import albamRouter from './src/routes/AlbamRouter.js';
+import userRouter from './src/routes/UserRouter.js';
 
 
 //app config
@@ -22,7 +23,7 @@ app.use(cors());
 //middleware config
 app.use("/api/song", SongRouter)
 app.use("/api/Albam", albamRouter)
-
+app.use("/api/user", userRouter)
 
 //init routes
 app.get('/', (req, res) => res.send("API WORKING"));

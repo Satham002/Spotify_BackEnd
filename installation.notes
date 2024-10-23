@@ -6,25 +6,5 @@ npm install cloudinary cors dotenv express mongoose multer nodemon
 
 npm run server
 
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDo0Mh2P8fN-DSxbD2CVh_LXo_DBAgAwQ0",
-  authDomain: "spotify-ea6a0.firebaseapp.com",
-  projectId: "spotify-ea6a0",
-  storageBucket: "spotify-ea6a0.appspot.com",
-  messagingSenderId: "416075607784",
-  appId: "1:416075607784:web:da9f8ac242b70197e8e35d",
-  measurementId: "G-7CBNLC944P"
-};
-
-// Initialize Firebase
-const app1 = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app1);
+API hosted Website:
+https://spotify-backend-irv1.onrender.com

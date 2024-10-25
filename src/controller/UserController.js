@@ -39,10 +39,10 @@ const signin = async (req, res) => {
         const isEmailExist = await userModel.findOne({ email });
         const isPhoneExist = await userModel.findOne({ phone });
         if (isEmailExist) {
-            return res.status(200).json({ result: false, message: "User is already registered" });
+            return res.status(200).json({ result: false, message: "Email is already registered" });
         }
         if (isPhoneExist) {
-            return res.status(400).json({ result: false, message: "Number is already registered" });
+            return res.status(200).json({ result: false, message: "Number is already registered" });
         }
         // Check is Contect number
         if (!phone || !isPhoneNumber(phone)) {

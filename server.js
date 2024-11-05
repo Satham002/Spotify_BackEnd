@@ -6,6 +6,7 @@ import connectDB from './src/config/db.js';
 import Connect_cloudinary from './src/config/Cloundinary.js';
 import albamRouter from './src/routes/AlbamRouter.js';
 import userRouter from './src/routes/UserRouter.js';
+import session from 'express-session';
 
 
 //app config
@@ -15,6 +16,13 @@ const port = process.env.PORT || 4000;
 app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded bodies (for form submissions)
 connectDB(); //mongo Connection
 Connect_cloudinary() //cloud-storage Connection
+
+app.use(session({
+    secret: process.env.SESS_TOKEN, // secretprocess.env.SESS_TOKEN
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Set to true if using HTTPS
+}));
 
 //middleware config
 app.use(express.json());
@@ -27,6 +35,7 @@ app.use("/api/user", userRouter)
 
 //init routes
 app.get('/', (req, res) => res.send("API WORKING"));
+
 // app.listen(port)
 
 
